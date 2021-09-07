@@ -1,5 +1,6 @@
 function createGrid(dimension) {
     const gridContainer = document.querySelector('#grid-container');
+    gridSizeLabel.textContent = `${gridSize.value} x ${gridSize.value}`;
     if (gridContainer.hasChildNodes) {
         gridContainer.querySelectorAll('*').forEach(n => n.remove());
     }
@@ -26,27 +27,33 @@ function clearGrid() {
     })
 }
 
-createGrid(16);
-
-const squares = document.querySelectorAll('.column');
-squares.forEach(square => {
-    square.addEventListener('mouseover', () => {
-        colorSquare(colorPicker.value, square);
-    });
-});
-
-const clearButton = document.querySelector('#clear-grid');
-clearButton.addEventListener('click', () => {
-    clearGrid();
-    const userDimension = prompt('Set grid dimensions: ');
-    createGrid(userDimension);
+function draw() {
     const squares = document.querySelectorAll('.column');
     squares.forEach(square => {
         square.addEventListener('mouseover', () => {
             colorSquare(colorPicker.value, square);
         });
+    });
+}
+
+const gridSize = document.querySelector('input.grid-size');
+const gridSizeLabel = document.querySelector('label.grid-size')
+createGrid(gridSize.value);
+
+gridSize.addEventListener('click', () => {
+    createGrid(gridSize.value);
+    draw();
 });
+
+draw();
+
+const clearButton = document.querySelector('#clear-grid');
+clearButton.addEventListener('click', () => {
+    clearGrid();
+    createGrid(gridSize.value);
+    draw();
 });
+
 
 const colorPicker = document.querySelector('#color-picker');
 console.log(colorPicker.value);
