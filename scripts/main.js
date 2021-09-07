@@ -16,8 +16,8 @@ function createGrid(dimension) {
     }
 }
 
-function colorSquare(square) {
-    square.setAttribute('style', 'background-color: blue;')
+function colorSquare(color, square) {
+    square.setAttribute('style', `background-color: ${color};`)
 }
 
 function clearGrid() {
@@ -31,7 +31,7 @@ createGrid(16);
 const squares = document.querySelectorAll('.column');
 squares.forEach(square => {
     square.addEventListener('mouseover', () => {
-        colorSquare(square);
+        colorSquare(colorPicker.value, square);
     });
 });
 
@@ -43,7 +43,10 @@ clearButton.addEventListener('click', () => {
     const squares = document.querySelectorAll('.column');
     squares.forEach(square => {
         square.addEventListener('mouseover', () => {
-            colorSquare(square);
+            colorSquare(colorPicker.value, square);
         });
 });
 });
+
+const colorPicker = document.querySelector('#color-picker');
+console.log(colorPicker.value);
