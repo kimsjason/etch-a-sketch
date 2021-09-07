@@ -1,0 +1,26 @@
+#grid-container {
+    display: flex;
+    width: 50%;
+    border: 1px solid black;
+}
+
+#grid-container::after {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+}
+
+.squares {
+    background-color: lightgray;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.column {
+    flex: 1;
+    border: 1px solid darkgray;
+
+}
