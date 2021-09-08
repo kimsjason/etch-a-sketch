@@ -17,10 +17,6 @@ function createGrid(dimension) {
     }
 }
 
-function colorSquare(color, square) {
-    square.setAttribute('style', `background-color: ${color};`)
-}
-
 function clearGrid() {
     const squares = document.querySelectorAll('.column');
     squares.forEach(square => {
@@ -28,9 +24,8 @@ function clearGrid() {
     })
 }
 
-function erase() {
-    colorPicker.value = '#fafafa';
-    draw();
+function colorSquare(color, square) {
+    square.setAttribute('style', `background-color: ${color};`)
 }
 
 function draw() {
@@ -42,10 +37,14 @@ function draw() {
     });
 }
 
+function erase() {
+    colorPicker.value = '#fafafa';
+    draw();
+}
 
 // EVENT LISTENERS
-const gridSize = document.querySelector('input.grid-size');
-const gridSizeLabel = document.querySelector('label.grid-size')
+const gridSize = document.querySelector('input#grid-size');
+const gridSizeLabel = document.querySelector('label#grid-size-label')
 createGrid(gridSize.value);
 
 gridSize.addEventListener('click', () => {

@@ -4,6 +4,8 @@
         <title>Etch A Sketch</title>
         <meta charset='utf-8'>
         <link rel='stylesheet' href='styles/style.css'>
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Orbitron'>
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat'>
         <script src='scripts/main.js' defer></script>
     </head>
     <body>
@@ -14,8 +16,8 @@
                 <button id='eraser'>Eraser</button>
                 <button id='clear-grid'>Clear Grid</button>
                 <div class='grid-size'>
-                    <label class='grid-size'></label>
-                    <input class='grid-size' type='range' min='1' max='100' value='50'>
+                    <input id='grid-size' type='range' min='1' max='100' value='50'>
+                    <label id='grid-size-label' for='grid-size'></label>
                 </div>
             </div>
             <div class = 'grid'>

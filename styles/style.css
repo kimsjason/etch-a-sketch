@@ -1,11 +1,26 @@
+/* GENERAL STYLES */
+html {
+    min-height: 100%;
+}
+
 body {
     background-color: black;
     color: white;
+    font: 1.3em Montserrat;
 }
+
 h1 {
     display: flex;
     justify-content: center;
-    margin: 1em;
+    text-align: center;
+    margin: .5em;
+    font: 4em Orbitron;
+    text-shadow: 
+        0 0 10px white,
+        0 0 20px white,
+        0 0 50px magenta,
+        0 0 75px magenta,
+        0 0 100px magenta;
 }
 
 /* GRID STYLES */
@@ -13,9 +28,10 @@ h1 {
     display: flex;
     flex: 2;
 }
+
 #grid-container {
     display: flex;
-    width: 85%;
+    width: 53%;
 }
 
 #grid-container::after {
@@ -33,6 +49,7 @@ h1 {
     flex-direction: column;
     flex: 1;
 }
+
 .column {
     flex: 1;
     border: 1px solid #f0f0f0;
@@ -53,21 +70,38 @@ h1 {
 }
 
 #color-picker {
-    width: 73%;
+    width: 48%;
     height: 10%;
     margin: 1em auto;
     border-radius: 10px;
 }
 
+#color-picker:hover {
+    transform: scale(1.05, 1.05);
+    transition: 0.25s;
+}
+
+button {
+    background: inherit;
+    color: inherit;
+    font: inherit;
+    border: 4px solid white;
+}
+
+button:hover {
+    transform: scale(1.05, 1.05);
+    transition: 0.25s;
+}
+
 #eraser {
-    width: 75%;
+    width: 50%;
     height: 10%;
     margin: 1em auto;
     border-radius: 10px;
 }
 
 #clear-grid {
-    width: 75%;
+    width: 50%;
     height: 10%;
     margin: 1em auto;
     border-radius: 10px;
@@ -78,10 +112,12 @@ div.grid-size {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 75%;
+    width: 50%;
     margin: 1em auto;
 }
 
-input.grid-size {
+input#grid-size {
     width: 100%;
+    height: 20px;
 }
+
