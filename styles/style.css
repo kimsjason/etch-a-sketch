@@ -2,11 +2,20 @@ body {
     background-color: black;
     color: white;
 }
+h1 {
+    display: flex;
+    justify-content: center;
+    margin: 1em;
+}
 
+/* GRID STYLES */
+.grid {
+    display: flex;
+    flex: 2;
+}
 #grid-container {
     display: flex;
-    width: 50%;
-    /*border: 1px solid black;*/
+    width: 85%;
 }
 
 #grid-container::after {
@@ -28,4 +37,51 @@ body {
     flex: 1;
     border: 1px solid #f0f0f0;
 
+}
+
+/* MENU STYLES */
+.content {
+    display: flex;
+}
+
+.menu {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#color-picker {
+    width: 73%;
+    height: 10%;
+    margin: 1em auto;
+    border-radius: 10px;
+}
+
+#eraser {
+    width: 75%;
+    height: 10%;
+    margin: 1em auto;
+    border-radius: 10px;
+}
+
+#clear-grid {
+    width: 75%;
+    height: 10%;
+    margin: 1em auto;
+    border-radius: 10px;
+}
+
+div.grid-size {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    margin: 1em auto;
+}
+
+input.grid-size {
+    width: 100%;
 }
