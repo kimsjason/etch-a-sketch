@@ -22,9 +22,15 @@ function colorSquare(color, square) {
 }
 
 function clearGrid() {
+    const squares = document.querySelectorAll('.column');
     squares.forEach(square => {
         square.setAttribute('style', 'background-color: lightgray;')
     })
+}
+
+function erase() {
+    colorPicker.value = '#fafafa';
+    draw();
 }
 
 function draw() {
@@ -36,6 +42,8 @@ function draw() {
     });
 }
 
+
+// EVENT LISTENERS
 const gridSize = document.querySelector('input.grid-size');
 const gridSizeLabel = document.querySelector('label.grid-size')
 createGrid(gridSize.value);
@@ -46,6 +54,11 @@ gridSize.addEventListener('click', () => {
 });
 
 draw();
+
+const eraser = document.querySelector('#eraser');
+eraser.addEventListener('click', () => {
+    erase();
+});
 
 const clearButton = document.querySelector('#clear-grid');
 clearButton.addEventListener('click', () => {
